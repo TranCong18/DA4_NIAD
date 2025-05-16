@@ -1,4 +1,6 @@
 @import "tailwindcss";
+/* src/app/globals.css */
+@import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 :root {
   --background: #ffffff;
