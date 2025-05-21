@@ -1,46 +1,46 @@
 // File: src/components/Banner.tsx
+// ✅ Đường dẫn: src/components/Banner.tsx
+
 "use client";
 
-import { Carousel } from "react-responsive-carousel";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-// Bạn có thể thay các ảnh này bằng ảnh thực tế từ hệ thống CMS hoặc thư mục public
 const bannerImages = [
-  {
-    src: "/images/banner1.jpg",
-    alt: "KIA Banner 1",
-  },
-  {
-    src: "/images/banner2.jpg",
-    alt: "KIA Banner 2",
-  },
-  {
-    src: "/images/banner3.jpg",
-    alt: "KIA Banner 3",
-  },
+  "/banners/banner1.jpg",
+  "/banners/banner2.jpg",
+  "/banners/banner3.jpg",
+  "/banners/banner4.jpg",
+  "/banners/banner5.jpg",
 ];
 
 export default function Banner() {
+  const settings = {
+    dots: true,
+    infinite: true,
+    autoplay: true,
+    speed: 800,
+    autoplaySpeed: 4000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    pauseOnHover: false,
+  };
+
   return (
-    <section className="relative">
-      <Carousel
-        autoPlay
-        infiniteLoop
-        showThumbs={false}
-        showStatus={false}
-        showArrows={true}
-        interval={5000}
-        transitionTime={800}
-      >
-        {bannerImages.map((image, idx) => (
-          <div key={idx}>
+    <section id="banner" className="relative">
+      <Slider {...settings}>
+        {bannerImages.map((src, index) => (
+          <div key={index}>
             <img
-              src={image.src}
-              alt={image.alt}
-              className="w-full h-[calc(100vh-80px)] object-cover"
+              src={src}
+              alt={`Slide ${index + 1}`}
+              className="w-full h-[500px] object-cover"
             />
           </div>
         ))}
-      </Carousel>
+      </Slider>
     </section>
   );
 }

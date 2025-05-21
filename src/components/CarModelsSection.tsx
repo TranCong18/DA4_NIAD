@@ -1,90 +1,50 @@
 // File: src/components/CarModelsSection.tsx
 // ✅ Đường dẫn: src/components/CarModelsSection.tsx
 
-"use client";
-
-import { useRef } from "react";
-
-const carModels = [
+const cashTruckModels = [
   {
-    name: "KIA Seltos",
-    image: "/cars/seltos.jpg",
+    name: "Xe Chở Tiền Bọc Thép 1 Tấn",
+    description: "Thiết kế gọn gàng, an toàn cao, phù hợp di chuyển nội thành.",
+    image: "/cars/truck1.jpg",
   },
   {
-    name: "KIA Sportage",
-    image: "/cars/sportage.jpg",
+    name: "Xe Chở Tiền Hai Ngăn Độc Lập",
+    description: "Tối ưu an ninh khi tách biệt tiền mặt và nhân sự.",
+    image: "/cars/truck2.jpg",
   },
   {
-    name: "KIA Sonet",
-    image: "/cars/sonet.jpg",
-  },
-  {
-    name: "KIA Sorento",
-    image: "/cars/sorento.jpg",
-  },
-  {
-    name: "KIA Carnival",
-    image: "/cars/carnival.jpg",
-  },
-  {
-    name: "KIA K3",
-    image: "/cars/k3.jpg",
+    name: "Xe Vận Chuyển Tài Liệu Mật",
+    description: "Trang bị hệ thống giám sát, định vị và chống trộm.",
+    image: "/cars/truck3.jpg",
   },
 ];
 
 export default function CarModelsSection() {
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-  const scroll = (direction: "left" | "right") => {
-    const container = scrollRef.current;
-    if (container) {
-      const scrollAmount = direction === "left" ? -300 : 300;
-      container.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    }
-  };
-
   return (
-    <section id="models" className="py-12 bg-gray-100">
+    <section id="cash-trucks" className="py-12 bg-gray-100">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-2xl font-bold text-gray-800 mb-6">
-          🚗 Dòng xe nổi bật
+        <h2 className="text-2xl font-bold text-gray-800 mb-8">
+          🚛 Dòng Xe Chở Tiền Nổi Bật
         </h2>
-
-        <div className="relative">
-          <button
-            onClick={() => scroll("left")}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow rounded-full p-2 hidden md:block"
-          >
-            ◀
-          </button>
-
-          <div
-            ref={scrollRef}
-            className="flex overflow-x-auto space-x-4 pb-4 scrollbar-hide"
-          >
-            {carModels.map((car, idx) => (
-              <div
-                key={idx}
-                className="min-w-[200px] md:min-w-[250px] bg-white rounded-xl shadow hover:shadow-lg transition"
-              >
-                <img
-                  src={car.image}
-                  alt={car.name}
-                  className="w-full h-40 object-cover rounded-t-xl"
-                />
-                <div className="p-3 text-center font-medium text-gray-800">
-                  {car.name}
-                </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {cashTruckModels.map((model, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-xl shadow hover:shadow-md transition overflow-hidden"
+            >
+              <img
+                src={model.image}
+                alt={model.name}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-lg font-semibold">{model.name}</h3>
+                <p className="text-sm text-gray-600 mt-2">
+                  {model.description}
+                </p>
               </div>
-            ))}
-          </div>
-
-          <button
-            onClick={() => scroll("right")}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow rounded-full p-2 hidden md:block"
-          >
-            ▶
-          </button>
+            </div>
+          ))}
         </div>
       </div>
     </section>
