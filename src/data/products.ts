@@ -12,14 +12,20 @@ export const products = [
     price: "1,299,000,000đ",
     image: "/images/test2-removebg-preview.png",
     desc: "Dòng xe chuyên dụng vận chuyển tiền mặt, bảo mật cao.",
+    seats: "5 chỗ",
+    transmission: "Hộp số tự động 6 cấp",
+    fuel: "Xăng, 2.0L",
   },
   {
     id: 2,
     name: "SUV Chống Đạn A2",
     category: "SUV",
     price: "1,359,000,000đ",
-    image: "/images/test2-removebg-preview.png",
+    image: "/images/test3.png",
     desc: "Chống đạn cấp độ B6, hệ thống giám sát GPS.",
+    seats: "5 chỗ",
+    transmission: "Tự động 6 cấp",
+    fuel: "Xăng, 1.6L",
   },
   {
     id: 3,
@@ -28,14 +34,20 @@ export const products = [
     price: "1,420,000,000đ",
     image: "/images/test2-removebg-preview.png",
     desc: "Trang bị két sắt và máy POS tích hợp.",
+    seats: "5 chỗ",
+    transmission: "Hộp số tự động 6 cấp",
+    fuel: "Xăng, 2.0L",
   },
   {
     id: 4,
     name: "SUV Cảnh Vệ A4",
     category: "SUV",
     price: "1,489,000,000đ",
-    image: "/images/test2-removebg-preview.png",
+    image: "/images/test3.png",
     desc: "Dùng cho đội cảnh vệ ngân hàng.",
+    seats: "5 chỗ",
+    transmission: "Tự động 6 cấp",
+    fuel: "Xăng, 1.6L",
   },
   {
     id: 5,
@@ -44,6 +56,9 @@ export const products = [
     price: "1,550,000,000đ",
     image: "/images/test2-removebg-preview.png",
     desc: "Bọc thép toàn phần, phục vụ vận chuyển giá trị cao.",
+    seats: "5 chỗ",
+    transmission: "Hộp số tự động 6 cấp",
+    fuel: "Xăng, 2.0L",
   },
 
   // === HYBRID ===
@@ -54,6 +69,9 @@ export const products = [
     price: "1,199,000,000đ",
     image: "/images/test2-removebg-preview.png",
     desc: "Xe tiếp quỹ hiện đại cho ngân hàng di động.",
+    seats: "5 chỗ",
+    transmission: "Tự động 6 cấp",
+    fuel: "Xăng, 1.6L",
   },
   {
     id: 7,
@@ -62,6 +80,9 @@ export const products = [
     price: "1,270,000,000đ",
     image: "/images/test2-removebg-preview.png",
     desc: "Kết hợp năng lượng sạch và khả năng chống trộm.",
+    seats: "5 chỗ",
+    transmission: "Hộp số tự động 6 cấp",
+    fuel: "Xăng, 2.0L",
   },
   {
     id: 8,
@@ -70,6 +91,9 @@ export const products = [
     price: "1,310,000,000đ",
     image: "/images/test2-removebg-preview.png",
     desc: "Vận hành êm ái, tiết kiệm nhiên liệu.",
+    seats: "5 chỗ",
+    transmission: "Tự động 6 cấp",
+    fuel: "Xăng, 1.6L",
   },
   {
     id: 9,
@@ -78,6 +102,9 @@ export const products = [
     price: "1,365,000,000đ",
     image: "/images/test2-removebg-preview.png",
     desc: "Hỗ trợ triển khai ATM di động nhanh chóng.",
+    seats: "5 chỗ",
+    transmission: "Hộp số tự động 6 cấp",
+    fuel: "Xăng, 2.0L",
   },
   {
     id: 10,
@@ -86,6 +113,9 @@ export const products = [
     price: "1,420,000,000đ",
     image: "/images/test2-removebg-preview.png",
     desc: "Xe ngân hàng sử dụng năng lượng kép và hệ thống khóa vân tay.",
+    seats: "5 chỗ",
+    transmission: "Tự động 6 cấp",
+    fuel: "Xăng, 1.6L",
   },
 
   // === Sedan ===
@@ -96,6 +126,9 @@ export const products = [
     price: "1,099,000,000đ",
     image: "/images/test2-removebg-preview.png",
     desc: "Dòng xe nhỏ gọn dùng trong đô thị.",
+    seats: "5 chỗ",
+    transmission: "Hộp số tự động 6 cấp",
+    fuel: "Xăng, 2.0L",
   },
   {
     id: 12,
@@ -104,6 +137,9 @@ export const products = [
     price: "1,150,000,000đ",
     image: "/images/test2-removebg-preview.png",
     desc: "Dành cho nhân viên kiểm soát tài chính lưu động.",
+    seats: "5 chỗ",
+    transmission: "Tự động 6 cấp",
+    fuel: "Xăng, 1.6L",
   },
   {
     id: 13,
@@ -112,6 +148,9 @@ export const products = [
     price: "1,230,000,000đ",
     image: "/images/test2-removebg-preview.png",
     desc: "Trang bị bàn làm việc và két nhỏ.",
+    seats: "5 chỗ",
+    transmission: "Hộp số tự động 6 cấp",
+    fuel: "Xăng, 2.0L",
   },
   {
     id: 14,
@@ -120,6 +159,9 @@ export const products = [
     price: "1,280,000,000đ",
     image: "/images/test2-removebg-preview.png",
     desc: "Di chuyển êm ái bảo vệ tài sản bên trong.",
+    seats: "5 chỗ",
+    transmission: "Tự động 6 cấp",
+    fuel: "Xăng, 1.6L",
   },
   {
     id: 15,
@@ -128,6 +170,9 @@ export const products = [
     price: "1,340,000,000đ",
     image: "/images/test2-removebg-preview.png",
     desc: "Xe phục vụ giao dịch ngân hàng lưu động.",
+    seats: "5 chỗ",
+    transmission: "Hộp số tự động 6 cấp",
+    fuel: "Xăng, 2.0L",
   },
 
   // === Hatchback ===
@@ -138,6 +183,9 @@ export const products = [
     price: "999,000,000đ",
     image: "/images/test2-removebg-preview.png",
     desc: "Xe chở tiền chuyên dụng, bảo mật 2 lớp.",
+    seats: "5 chỗ",
+    transmission: "Tự động 6 cấp",
+    fuel: "Xăng, 1.6L",
   },
   {
     id: 17,
@@ -146,6 +194,9 @@ export const products = [
     price: "950,000,000đ",
     image: "/images/test2-removebg-preview.png",
     desc: "Phù hợp di chuyển ngõ hẹp, khu đông dân.",
+    seats: "5 chỗ",
+    transmission: "Hộp số tự động 6 cấp",
+    fuel: "Xăng, 2.0L",
   },
   {
     id: 18,
@@ -154,6 +205,9 @@ export const products = [
     price: "1,030,000,000đ",
     image: "/images/test2-removebg-preview.png",
     desc: "Vận hành dễ dàng, bảo vệ bằng mã PIN.",
+    seats: "5 chỗ",
+    transmission: "Tự động 6 cấp",
+    fuel: "Xăng, 1.6L",
   },
   {
     id: 19,
@@ -162,6 +216,9 @@ export const products = [
     price: "1,080,000,000đ",
     image: "/images/test2-removebg-preview.png",
     desc: "Chuyên giao tài liệu và hồ sơ ngân hàng.",
+    seats: "5 chỗ",
+    transmission: "Hộp số tự động 6 cấp",
+    fuel: "Xăng, 2.0L",
   },
   {
     id: 20,
@@ -170,5 +227,8 @@ export const products = [
     price: "1,120,000,000đ",
     image: "/images/test2-removebg-preview.png",
     desc: "Xe phụ trợ kiểm đếm và vận chuyển tài chính.",
+    seats: "5 chỗ",
+    transmission: "Tự động 6 cấp",
+    fuel: "Xăng, 1.6L",
   },
 ];

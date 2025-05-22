@@ -85,15 +85,15 @@ export default function ProductSection() {
             <div className="absolute top-6 right-6 z-20 text-white space-y-4">
               <div className="flex items-center gap-2">
                 <Fuel size={16} />
-                <span className="text-sm">Xăng, 1.25L</span>
+                <span className="text-sm">{product.fuel}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Settings2 size={16} />
-                <span className="text-sm">Hộp số tự động 4 cấp (4AT)</span>
+                <span className="text-sm">{product.transmission}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Users size={16} />
-                <span className="text-sm">5 chỗ</span>
+                <span className="text-sm">{product.seats}</span>
               </div>
             </div>
 
