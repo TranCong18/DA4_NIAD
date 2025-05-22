@@ -6,7 +6,11 @@ export default function Footer() {
     <footer className="bg-gray-900 text-white pt-12 pb-6">
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
-          <img src="/logo.png" alt="KIA Logo" className="h-10 mb-4" />
+          <img
+            src="/images/test2-removebg-preview.png"
+            alt="KIA Logo"
+            className="h-10 mb-4"
+          />
           <p className="text-sm text-gray-400">
             KIA Việt Nam – Nơi bạn tìm thấy những mẫu xe hiện đại, an toàn và
             đẳng cấp.

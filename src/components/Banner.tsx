@@ -8,11 +8,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const bannerImages = [
-  "/banners/banner1.jpg",
-  "/banners/banner2.jpg",
-  "/banners/banner3.jpg",
-  "/banners/banner4.jpg",
-  "/banners/banner5.jpg",
+  "/images/banners/test2.png",
+  "/images/banners/test2.png",
+  "/images/banners/test2.png",
+  "/images/banners/test2.png",
+  "/images/banners/test2.png",
 ];
 
 export default function Banner() {

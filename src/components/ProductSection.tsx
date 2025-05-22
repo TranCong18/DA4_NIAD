@@ -4,12 +4,29 @@
 "use client";
 import { useState } from "react";
 import { categories, products } from "@/data/products";
-import { Fuel, Settings2, Users } from "lucide-react";
+import {
+  Fuel,
+  Settings2,
+  Users,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 
 export default function ProductSection() {
   const [activeCategory, setActiveCategory] = useState("SUV");
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   const filtered = products.filter((p) => p.category === activeCategory);
-  const product = filtered[0];
+  const total = filtered.length;
+  const product = filtered[currentIndex];
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev - 1 + total) % total);
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % total);
+  };
 
   return (
     <section className="w-screen h-screen relative bg-white overflow-hidden flex flex-col justify-center md:px-16">
@@ -22,7 +39,10 @@ export default function ProductSection() {
             return (
               <button
                 key={cat}
-                onClick={() => setActiveCategory(cat)}
+                onClick={() => {
+                  setActiveCategory(cat);
+                  setCurrentIndex(0); // reset index when changing category
+                }}
                 className={`px-6 py-2 rounded-full font-semibold text-sm transition-all border-b-2 ${
                   isActive
                     ? "text-black border-black"
@@ -42,9 +62,7 @@ export default function ProductSection() {
           {/* Left Info */}
           <div className="w-auto space-y-4 px-6">
             <h2 className="text-4xl font-bold uppercase">{product.name}</h2>
-            <p className="text-gray-400 text-base">
-              Sắc màu thời trang - Khẳng định phong cách
-            </p>
+            <p className="text-gray-400 text-base">{product.desc}</p>
             <p className="text-2xl font-bold">{product.price}</p>
             <button className="mt-4 px-6 py-2 bg-black text-white rounded-md hover:bg-gray-800">
               Xem tất cả
@@ -77,6 +95,22 @@ export default function ProductSection() {
                 <Users size={16} />
                 <span className="text-sm">5 chỗ</span>
               </div>
+            </div>
+
+            {/* Mũi tên điều hướng */}
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20 flex items-center gap-4">
+              <button
+                onClick={handlePrev}
+                className="bg-white rounded-full p-2 shadow hover:bg-gray-100"
+              >
+                <ChevronLeft size={20} />
+              </button>
+              <button
+                onClick={handleNext}
+                className="bg-white rounded-full p-2 shadow hover:bg-gray-100"
+              >
+                <ChevronRight size={20} />
+              </button>
             </div>
           </div>
         </div>

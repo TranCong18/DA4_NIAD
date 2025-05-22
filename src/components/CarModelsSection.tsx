@@ -1,66 +1,114 @@
-// File: src/components/CarModelsSection.tsx
-// ✅ Đường dẫn: src/components/CarModelsSection.tsx
+// File: src/components/NewsSection.tsx
+// ✅ Đường dẫn: src/components/NewsSection.tsx
 
-const cashTruckModels = [
+"use client";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { useState } from "react";
+import clsx from "clsx";
+
+const newsList = [
   {
-    name: "Xe Chở Tiền Bọc Thép 1 Tấn",
-    description: "Thiết kế gọn gàng, an toàn cao, phù hợp di chuyển nội thành.",
-    image: "/cars/truck1.jpg",
+    title: "Ra mắt xe chở tiền chống đạn phiên bản 2025",
+    description: "Dòng xe mới đạt tiêu chuẩn EN1063 cấp độ B6 chống đạn.",
+    image: "/images/news/test2.png",
+    date: "12/05/2025",
   },
   {
-    name: "Xe Chở Tiền Hai Ngăn Độc Lập",
-    description: "Tối ưu an ninh khi tách biệt tiền mặt và nhân sự.",
-    image: "/cars/truck2.jpg",
+    title: "Ký kết hợp tác với ngân hàng quốc tế",
+    description: "Cung cấp 50 xe vận chuyển tiền cho hệ thống ATM toàn quốc.",
+    image: "/images/news/test2.png",
+    date: "05/05/2025",
   },
   {
-    name: "Xe Vận Chuyển Tài Liệu Mật",
-    description: "Trang bị hệ thống giám sát, định vị và chống trộm.",
-    image: "/cars/truck3.jpg",
+    title: "Hội thảo “An ninh vận chuyển tài chính 4.0”",
+    description: "Giải pháp tích hợp GPS, camera AI và cảnh báo xâm nhập.",
+    image: "/images/news/test2.png",
+    date: "25/04/2025",
   },
   {
-    name: "Xe Vận Chuyển Tài Liệu Mật",
-    description: "Trang bị hệ thống giám sát, định vị và chống trộm.",
-    image: "/cars/truck3.jpg",
+    title: "Tăng cường bảo mật xe vận chuyển tiền",
+    description: "Trang bị khóa sinh trắc học và mã hóa dữ liệu đường truyền.",
+    image: "/images/news/test2.png",
+    date: "20/04/2025",
   },
   {
-    name: "Xe Vận Chuyển Tài Liệu Mật",
-    description: "Trang bị hệ thống giám sát, định vị và chống trộm.",
-    image: "/cars/truck3.jpg",
+    title: "Hợp tác chiến lược cùng Bộ Công An",
+    description: "Đảm bảo an toàn tuyệt đối cho mọi tuyến đường vận chuyển.",
+    image: "/images/news/test2.png",
+    date: "18/04/2025",
   },
   {
-    name: "Xe Vận Chuyển Tài Liệu Mật",
-    description: "Trang bị hệ thống giám sát, định vị và chống trộm.",
-    image: "/cars/truck3.jpg",
+    title: "Xe mới tích hợp AI nhận diện khuôn mặt",
+    description: "Chống trộm và phát hiện hành vi bất thường tức thời.",
+    image: "/images/news/test2.png",
+    date: "15/04/2025",
+  },
+  {
+    title: "Hệ thống định vị toàn cầu chính xác từng giây",
+    description: "Ứng dụng công nghệ GNSS vào vận hành xe bọc thép.",
+    image: "/images/news/test2.png",
+    date: "10/04/2025",
+  },
+  {
+    title: "Tham gia triển lãm công nghệ bảo mật 2025",
+    description: "Trưng bày dòng xe vận chuyển tiền hiện đại nhất Đông Nam Á.",
+    image: "/images/news/test2.png",
+    date: "05/04/2025",
   },
 ];
 
-export default function CarModelsSection() {
+export default function NewsSection() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const settings = {
+    centerMode: true,
+    centerPadding: "0px",
+    slidesToShow: 3,
+    infinite: true,
+    autoplay: true,
+    speed: 1000,
+    autoplaySpeed: 2500,
+    beforeChange: (current: number, next: number) => setCurrentSlide(next),
+  };
+
   return (
-    <section id="cash-trucks" className="py-12 bg-gray-100">
+    <section id="news" className="py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-2xl font-bold text-gray-800 mb-8">
-          🚛 Ưu Điểm Nổi Bật
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {cashTruckModels.map((model, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-xl shadow hover:shadow-md transition overflow-hidden"
-            >
-              <img
-                src={model.image}
-                alt={model.name}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4">
-                <h3 className="text-lg font-semibold">{model.name}</h3>
-                <p className="text-sm text-gray-600 mt-2">
-                  {model.description}
-                </p>
+        <h2 className="text-2xl font-bold text-gray-800 mb-8">Sản Phẩm Mới</h2>
+        <Slider {...settings}>
+          {newsList.map((news, index) => {
+            const isActive = index === currentSlide;
+            return (
+              <div key={index} className="px-2">
+                <div
+                  className={clsx(
+                    "border rounded-xl overflow-hidden shadow transition-all duration-500",
+                    isActive
+                      ? "bg-white scale-105 shadow-xl"
+                      : "bg-gray-100 scale-95 opacity-50"
+                  )}
+                >
+                  <img
+                    src={news.image}
+                    alt={news.title}
+                    className="w-full h-48 object-cover"
+                  />
+                  <div className="p-4">
+                    <p className="text-sm text-gray-500 mb-1">{news.date}</p>
+                    <h3 className="text-lg font-semibold text-gray-800">
+                      {news.title}
+                    </h3>
+                    <p className="text-sm text-gray-600 mt-2">
+                      {news.description}
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            );
+          })}
+        </Slider>
       </div>
     </section>
   );

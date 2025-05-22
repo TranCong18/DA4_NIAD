@@ -5,19 +5,19 @@ const newsList = [
   {
     title: "Ra mắt xe chở tiền chống đạn phiên bản 2025",
     description: "Dòng xe mới đạt tiêu chuẩn EN1063 cấp độ B6 chống đạn.",
-    image: "/news/cash-news1.jpg",
+    image: "/images/news/test2.png",
     date: "12/05/2025",
   },
   {
     title: "Ký kết hợp tác với ngân hàng quốc tế",
     description: "Cung cấp 50 xe vận chuyển tiền cho hệ thống ATM toàn quốc.",
-    image: "/news/cash-news2.jpg",
+    image: "/images/news/test2.png",
     date: "05/05/2025",
   },
   {
     title: "Hội thảo “An ninh vận chuyển tài chính 4.0”",
     description: "Giải pháp tích hợp GPS, camera AI và cảnh báo xâm nhập.",
-    image: "/news/cash-news3.jpg",
+    image: "/images/news/test2.png",
     date: "25/04/2025",
   },
 ];
