@@ -17,6 +17,21 @@ const cashTruckModels = [
     description: "Trang bị hệ thống giám sát, định vị và chống trộm.",
     image: "/cars/truck3.jpg",
   },
+  {
+    name: "Xe Vận Chuyển Tài Liệu Mật",
+    description: "Trang bị hệ thống giám sát, định vị và chống trộm.",
+    image: "/cars/truck3.jpg",
+  },
+  {
+    name: "Xe Vận Chuyển Tài Liệu Mật",
+    description: "Trang bị hệ thống giám sát, định vị và chống trộm.",
+    image: "/cars/truck3.jpg",
+  },
+  {
+    name: "Xe Vận Chuyển Tài Liệu Mật",
+    description: "Trang bị hệ thống giám sát, định vị và chống trộm.",
+    image: "/cars/truck3.jpg",
+  },
 ];
 
 export default function CarModelsSection() {
@@ -24,7 +39,7 @@ export default function CarModelsSection() {
     <section id="cash-trucks" className="py-12 bg-gray-100">
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-2xl font-bold text-gray-800 mb-8">
-          🚛 Dòng Xe Chở Tiền Nổi Bật
+          🚛 Ưu Điểm Nổi Bật
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {cashTruckModels.map((model, index) => (

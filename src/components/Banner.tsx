@@ -29,14 +29,14 @@ export default function Banner() {
   };
 
   return (
-    <section id="banner" className="relative">
+    <section id="banner" className="w-screen h-screen relative overflow-hidden">
       <Slider {...settings}>
         {bannerImages.map((src, index) => (
           <div key={index}>
             <img
               src={src}
               alt={`Slide ${index + 1}`}
-              className="w-full h-[500px] object-cover"
+              className="w-screen h-screen object-cover"
             />
           </div>
         ))}

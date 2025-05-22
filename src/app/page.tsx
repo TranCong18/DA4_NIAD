@@ -3,6 +3,7 @@
 
 import Header from "@/components/Header";
 import Banner from "@/components/Banner";
+import ProductSection from "@/components/ProductSection";
 import CarModelsSection from "@/components/CarModelsSection";
 import NewsSection from "@/components/NewsSection";
 import AboutCTA from "@/components/AboutCTA";
@@ -14,6 +15,7 @@ export default function HomePage() {
       <Header />
       <main>
         <Banner />
+        <ProductSection />
         <CarModelsSection />
         <NewsSection />
         <AboutCTA />
