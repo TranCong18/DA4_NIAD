@@ -12,13 +12,18 @@ import {
   ChevronRight,
 } from "lucide-react";
 
+// ✅ Tìm danh mục đầu tiên có sản phẩm
+const initialCategory =
+  categories.find((cat) => products.some((p) => p.category === cat)) ||
+  categories[0];
+
 export default function ProductSection() {
-  const [activeCategory, setActiveCategory] = useState("SUV");
+  const [activeCategory, setActiveCategory] = useState(initialCategory);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const filtered = products.filter((p) => p.category === activeCategory);
   const total = filtered.length;
-  const product = filtered[currentIndex];
+  const product = total > 0 ? filtered[currentIndex] : null;
 
   const handlePrev = () => {
     setCurrentIndex((prev) => (prev - 1 + total) % total);
@@ -41,7 +46,7 @@ export default function ProductSection() {
                 key={cat}
                 onClick={() => {
                   setActiveCategory(cat);
-                  setCurrentIndex(0); // reset index when changing category
+                  setCurrentIndex(0);
                 }}
                 className={`px-6 py-2 rounded-full font-semibold text-sm transition-all border-b-2 ${
                   isActive
@@ -56,32 +61,29 @@ export default function ProductSection() {
         </div>
       </div>
 
-      {/* Product */}
-      {product && (
+      {/* Product hiển thị nếu có */}
+      {product ? (
         <div className="w-full grid md:grid-cols-2 gap-6 items-center flex-1">
           {/* Left Info */}
           <div className="w-auto space-y-4 px-6">
             <h2 className="text-4xl font-bold uppercase">{product.name}</h2>
             <p className="text-gray-400 text-base">{product.desc}</p>
             <p className="text-2xl font-bold">{product.price}</p>
-            <button className="mt-4 px-6 py-2 bg-black text-white rounded-md hover:bg-gray-800">
+            <button className="mt-4 px-6 py-2 bg-[#006c67] text-white rounded-md hover:bg-gray-800">
               Xem tất cả
             </button>
           </div>
 
           {/* Right - Image + Info */}
           <div className="relative">
-            {/* Nền xiên màu xanh đậm */}
-            <div className="absolute inset-0 bg-[#0d1b2a] skew-x-[-12deg] origin-left z-0 rounded-md"></div>
+            <div className="absolute inset-0 bg-[#006c67] skew-x-[-12deg] origin-left z-0 rounded-md"></div>
 
-            {/* Ảnh xe */}
             <img
               src={product.image}
               alt={product.name}
               className="relative z-10 w-full h-auto object-contain ml-[-250px]"
             />
 
-            {/* Thông số kỹ thuật */}
             <div className="absolute top-6 right-6 z-20 text-white space-y-4">
               <div className="flex items-center gap-2">
                 <Fuel size={16} />
@@ -97,7 +99,6 @@ export default function ProductSection() {
               </div>
             </div>
 
-            {/* Mũi tên điều hướng */}
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20 flex items-center gap-4">
               <button
                 onClick={handlePrev}
@@ -114,6 +115,10 @@ export default function ProductSection() {
             </div>
           </div>
         </div>
+      ) : (
+        <p className="text-center text-gray-500 text-lg">
+          Không có sản phẩm nào trong danh mục này.
+        </p>
       )}
     </section>
   );
